@@ -14,10 +14,14 @@ export const getStaticProps = (async (context) => {
   repo: CountyInterface
 }>
 
+async function defaultCountyData() {
+  const data = await import('@/api/county.json')
+  return data.default
+}
 
-export default function Home({
-  repo,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+
+export default async function Home() {
+  const repo = await defaultCountyData()
   return (
     <div>
       {process.env.NODE_ENV === "development" && mockData && countyData

@@ -79,7 +79,6 @@ function ClientForm({ initData, countyData }: {
     return countyData ? countyData.map((item) => ({ name: item.name })) : [];
   }, [])
   const regins = useMemo(() => {
-    setSelectedRegin('')
     setAlldata(initData)
     return selectedCity ? countyData.filter((item) => {
       if (item.name === selectedCity) return item
@@ -96,7 +95,7 @@ function ClientForm({ initData, countyData }: {
           <FormAutocomplete
             optionLabel='縣/市'
             options={cities || []}
-            stateChange={setSelectedCity}
+            stateChange={[setSelectedCity,setSelectedRegin]}
             filterKey={selectedCity}
           />
         </FormControl>

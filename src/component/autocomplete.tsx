@@ -8,7 +8,7 @@ type OptionItemType = {
 };
 
 interface FormSelectInterface {
-    stateChange?: (value: string) => void,
+    stateChange?: React.Dispatch<React.SetStateAction<string>> | React.Dispatch<React.SetStateAction<string>>[],
     optionLabel: string,
     options: OptionItemType[],
     disabled?: boolean,
@@ -24,7 +24,12 @@ function FormAutocomplete({ optionLabel, options, stateChange, disabled, filterK
     const handleChange = (e: React.ChangeEvent<EventTarget>, v: OptionItemType | null
     ) => {
         setInputValue([{ name: v?.name || '' }])
-        stateChange!(v?.name || '')
+        if (stateChange instanceof Array) {
+            stateChange[0](v?.name || '')
+            stateChange[1]('')
+        } else {
+            stateChange!(v?.name || '')
+        }
     }
     // const defaultValue = React.useMemo(() => options.filter((item) => {
     //     return item.name === filterKey
@@ -47,7 +52,7 @@ function FormAutocomplete({ optionLabel, options, stateChange, disabled, filterK
             options={options}
             getOptionLabel={(option) => option.name}
             isOptionEqualToValue={(option, val) => {
-                return option.name === val?.name || val?.name === ''
+                return option.name === val?.name 
             }}
             onChange={handleChange}
             renderOption={(props, option) => (
