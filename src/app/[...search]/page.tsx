@@ -3,14 +3,6 @@ import mockData from '@/mock/data.json';
 import countyData from '@/api/county.json';
 import ClientForm from './clientForm';
 
-// export const getStaticProps = (async (context) => {
-//   const res = await fetch('./api/county.json')
-//   const repo = await res.json()
-//   return { props: { repo } }
-// }) satisfies GetStaticProps<{
-//   repo: CountyInterface
-// }>
-
 async function defaultCountyData() {
   const data = await import('@/api/county.json');
   return data.default;
