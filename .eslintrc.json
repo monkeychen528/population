@@ -9,13 +9,7 @@
   },
   "rules":{
     "linebreak-style": ["error", "unix"],
-    // "react/require-default-props": [
-    //   "error", 
-    //   {
-    //     "forbidDefaultForRequired": true,        
-    //     "functions": "defaultArguments" //Here
-    //   }
-    // ]
-    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off"
   }
 }

@@ -1,9 +1,8 @@
-import React from "react";
-import type { InferGetStaticPropsType, GetStaticProps } from 'next'
-import Home from "./[...search]/page";
+import React from 'react';
+import Home from './[...search]/page';
 
 function Index() {
-    return <Home  />
+  return <Home />;
 }
 
-export default Index
+export default Index;
