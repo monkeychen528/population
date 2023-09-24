@@ -1,10 +1,10 @@
 import { CountyInterface, DistrictsInterface } from '@/interface/data';
 
-export function filterContent<T extends CountyInterface | DistrictsInterface>
-  (arrData: T[], key: string, searchText: string): T[] {
-  return arrData.filter((item) => {
-    if (key in item) return item.name === searchText;
-  });
+export function filterContent
+  <T extends CountyInterface | DistrictsInterface>(arrData: T[], key: string, searchText: string)
+  : T[] {
+  const data = arrData.filter((item) => item.name === searchText);
+  return data;
 }
 
 let controller = new AbortController();

@@ -57,7 +57,7 @@ function Chart(props: HighchartsReact.Props) {
       series: {
         dataLabels: {
           enabled: true,
-          formatter: function () {
+          formatter: function (this: Highcharts.PointLabelObject) {
             return this.y?.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
           },
         },

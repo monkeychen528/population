@@ -7,9 +7,14 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "rules":{
-    "linebreak-style": ["error", "unix"],
+  "rules": {
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
     "react/require-default-props": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "object-shorthand": "off",
+    "react/no-this-in-sfc": "off"
   }
 }

@@ -78,10 +78,8 @@ function ClientForm({ countyData }: {
 
   const cities = useMemo(() => (countyData
     ? countyData.map((item) => ({ name: item.name })) : []), []);
-  const regins = useMemo(() => {
-    setAlldata({});
-    return (selectedCity ? countyData.filter((item) => (item.name === selectedCity)) : []);
-  }, [selectedCity]);
+  const regins = useMemo(() => (selectedCity ? countyData.filter((item) => (
+    item.name === selectedCity)) : []), [selectedCity]);
   return (
     <>
       <Box sx={{ textAlign: mobilApp ? 'left' : 'center' }}>人口數、戶數按戶別及性別統計</Box>
