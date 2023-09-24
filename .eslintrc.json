@@ -1,3 +1,21 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules":{
+    "linebreak-style": ["error", "unix"],
+    // "react/require-default-props": [
+    //   "error", 
+    //   {
+    //     "forbidDefaultForRequired": true,        
+    //     "functions": "defaultArguments" //Here
+    //   }
+    // ]
+    "react/jsx-props-no-spreading": "off",
+  }
 }

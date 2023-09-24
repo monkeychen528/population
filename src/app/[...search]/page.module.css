@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+  .main {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .dividerColor::before,.dividerColor::after {
+    border-color: #9c27b0;
+  }
+}
